@@ -33,5 +33,6 @@ phases:
     commands:
          - echo Build started on `date`
          - ls
+         - cd seleniumtests
          - dotnet test
          
