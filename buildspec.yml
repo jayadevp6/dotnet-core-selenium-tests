@@ -27,7 +27,7 @@ phases:
          - add-apt-repository universe
          - apt install -y apt-transport-https
          - apt update -y
-         - apt -y dotnet-sdk-5.0
+         - apt install -y dotnet-sdk-5.0
          - apt install -y unzip xvfb libxi6 libgconf-2-4
   build:
     commands:
