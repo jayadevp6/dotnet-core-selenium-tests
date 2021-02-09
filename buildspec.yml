@@ -34,5 +34,6 @@ phases:
     commands:
          - echo Build started on `date`
          - ls
-         - dotnet test ~/seleniumtests/seleniumtests.csproj
+         - cd seleniumtests
+         - dotnet test seleniumtests.csproj
          
