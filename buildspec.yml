@@ -34,6 +34,6 @@ phases:
     commands:
          - echo Build started on `date`
          - ls
-         - dotnet restore
+         - cd dotnet-core-selenium-tests
          - dotnet test
          
