@@ -3,8 +3,8 @@ using System.Runtime.InteropServices;
 using Microsoft.Edge.SeleniumTools;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Firefox;
-using OpenQA.Selenium.IE;
+//using OpenQA.Selenium.Firefox;
+//using OpenQA.Selenium.IE;
 using Xunit;
 
 namespace seleniumtests
@@ -13,9 +13,9 @@ namespace seleniumtests
     {
         [SkippableTheory]
         [InlineData("Chrome")]
-        [InlineData("Edge")]
-        [InlineData("Firefox")]
-        [InlineData("InternetExplorer")] // Follow https://stackoverflow.com/a/36836137/1064169 for one-time setup
+        //[InlineData("Edge")]
+       // [InlineData("Firefox")]
+       // [InlineData("InternetExplorer")] // Follow https://stackoverflow.com/a/36836137/1064169 for one-time setup
         public static void Search_For_DotNet_Core(string browserName)
         {
             // Arrange
@@ -47,9 +47,9 @@ namespace seleniumtests
             return browserName.ToLowerInvariant() switch
             {
                 "chrome" => CreateChromeDriver(driverDirectory, isDebuggerAttached),
-                "edge" => CreateEdgeDriver(driverDirectory, isDebuggerAttached),
-                "firefox" => CreateFirefoxDriver(driverDirectory, isDebuggerAttached),
-                "internetexplorer" => new InternetExplorerDriver(driverDirectory, new InternetExplorerOptions() { IgnoreZoomLevel = true }),
+                //"edge" => CreateEdgeDriver(driverDirectory, isDebuggerAttached),
+               // "firefox" => CreateFirefoxDriver(driverDirectory, isDebuggerAttached),
+               // "internetexplorer" => new InternetExplorerDriver(driverDirectory, new InternetExplorerOptions() { IgnoreZoomLevel = true }),
                 _ => throw new NotSupportedException($"The browser '{browserName}' is not supported."),
             };
         }
@@ -74,7 +74,7 @@ namespace seleniumtests
             return new ChromeDriver(driverDirectory, options);
         }
 
-        private static IWebDriver CreateEdgeDriver(
+        /*private static IWebDriver CreateEdgeDriver(
             string driverDirectory,
             bool isDebuggerAttached)
         {
@@ -103,6 +103,6 @@ namespace seleniumtests
             }
 
             return new FirefoxDriver(driverDirectory, options);
-        }
+        }*/
     }
 }
